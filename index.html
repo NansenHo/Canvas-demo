@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Canvas 画板</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hi
+<div id="canvas"></div>
 </body>
+<script>
+    canvas.onclick = (e)=>{
+        console.log(e.clientX)
+        console.log(e.clientY)
+        let div = document.createElement('div')
+        div.style.position = 'absolute'
+        div.style.left = e.clientX + 'px'
+        div.style.top = e.clientY + 'px'
+        div.style.border = '1px solid black'
+        div.style.width = '6px'
+        div.style.height = '6px'
+        div.style.marginLeft = '-3px'
+        div.style.marginTop = '-3px'
+        div.style.borderRadius = '50%'
+        div.style.backgroundColor = 'black'
+        document.body.appendChild(div)
+    }
+</script>
 </html>
